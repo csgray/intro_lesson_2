@@ -25,5 +25,32 @@ print (52 * 3) + (12 * 9)
 print 52 * (3 + 12) * 9
 print 365 * 24 * 60 * 60
 
-#First Programming Quiz
+# First Programming Quiz
 print 7 * 7 * 24 * 60
+
+# Reasons We Don't Use Natural Languages
+# ambiguity: different people can interpret the same sentence to mean different
+#   things, but we want computers to interpret things the same way every time
+# verbosity: takes too many words to detail every step
+
+# print 2 + 2 +
+# We can figure out what that means, but Python produces a syntax error
+
+# Backus-Naur Form
+# <non-termina>l -> replacement
+# keep going until everything is a terminal
+
+# Python Grammar for Arithmetic Expressions
+# Expression -> Expression Operator Expression
+# Expression -> Number
+# Expression -> ( Expression )
+# Operator -> +
+# Operator -> *
+# Number -> 0,1,...
+
+# Speed of Light
+print 299792458 * 100 * 1.0/1000000000
+
+# Integer Division
+# Python ignores the decimal (remainder) when you divide an integer by another
+# integer
