@@ -375,6 +375,14 @@
   <article class="category">
     <h1 class="heading">Python</h1>
     <section class="section">
+      <h2 class="subheading">Special Notes</h2>
+      Python is case-sensitive.<br>
+      Python is space-sensitive and will generate an error if there is a space
+        in front of a command.<br>
+      Python comments start with &num;<br>
+    </section>
+
+    <section class="section">
       <h2 class="subheading">Vocabulary</h2>
       Computer: A universal machine that can be programmed to do any
         computation<br>
@@ -386,6 +394,7 @@
         the computer directly<br>
       Input: Programs that we write<br>
       Interpreter: Executes our programs on the computer<br>
+      Method: Procedure built into Python
     </section>
     
     <section>
@@ -504,19 +513,29 @@
       &quote;, to delineate them from variables. It doesn't matter which you
       use so long as the string begins and ends with the same one.</p>
 
-      <p>That means that<br>
-      <span class="code">print 'Hello'<br></span>
-      and<br>
-      <span class="code">print "Hello"<br></span>
-      have the same result: <span class="code">Hello<span></p>
+      <section class="code">
+        print 'Hello' # Result: Hello<br>
+        print "Hello" # Result: Hello<br>
+      </section>
 
       <p>You can add strings together which is called "concatenation", but you
-      cannot concatenate strings and integers. You can multiple strings.</p>
+      cannot concatenate strings and integers. You need to include the spaces
+      in the strings as Python will not add them. You can multiply strings.</p>
 
       <section class="code">
-        <p>name = "Corey"<br>
-        print "Hello" + name + 10 * "!"<br>
-        Result: Hello Corey!!!!!!!!!!</p>
+        name = "Corey"<br>
+        print "Hello" &plus; name &num; Result: HelloCorey<br>
+        print "Hello " + name + 10 * "!" &num; Result: Hello Corey!!!!!!!!!!
+        <br>
+      </section>
+
+      <p>Note that strings are not integers. You cannot do math with strings.
+        Instead of being summed, numbers in strings are printed side by side.
+      </p>
+
+      <section class="code">
+      print 2 + 2 # Result: 4<br>
+      print "2" + "2" # Result: 22<br>
       </section>
 
       <p>You can select the characters of a string, called 'indexing', by 
@@ -534,12 +553,56 @@
       <p>Trying to index a character that isn't in the string produces an 
         error:</p>
 
-      <section class="code">IndexError: string out of range<section>
+      <section class="code">IndexError: string out of range</section>
 
       <p>It is possible to index more than one character. You can specify a
-        starting and stopping character
+        starting and stopping character then use the characters between them.
+        The index will stop immediately before the stopping character. An empty
+        specification will run to the beginning or end of the string.</p>
 
+      <section class="code">
+        word = 'assume'<br>
+        print word[3] &num; Result: u<br>
+        print word[3:4] &num; Result: u<br>
+        print word[3:3] &num; This stops where it starts. Result:  <br>
+        print word[4:6] &num; From 4 to 6. Result: me<br>
+        print word[4:] &num; From 4 to end. Result: me<br>
+        print word[:2] &num; From beginning to 2. Result: as<br>
+        print word[:] &num; From beginning to end. Result: assume<br>
+      </section>
+
+      <p>It is also possible to search for a string within a string.</p>
+
+      <span class="code">&lt;string1&gt;.find&lpar;&lt;string2&gt;&rpar;</span>
+
+      <p>This will not print the string itself but the numerical position of
+        the first character of the second string within the larger string. The
+        result be -1 if the string can't be found. An empty string, meaning no
+        space between the quotation marks, will always be found. Python thinks
+        that every string begins with the empty string.<p>
+
+      <section class="code">
+        print "test".find&lpar;"te"&rpar; &num; Result: 0<br>
+        print "test".find&lpar;"st"&rpar; &num; Result: 2<br>
+        print "text".find&lpar;"text"&rpar; # Result: 0<br>
+        print "text".find&lpar;"Text"&rpar; # Python is case sensitive. 
+          Result: -1<br>
+        print "text".find&lpar;""&rpar; # This is an empty string. Result: 0
+          <br>
+        print "text".find&lpar;" "&rpar; # This is a space. Result: -1<br>
+      </section>
+      
+      <p>You can find the second, third, and so on occurrence of a string by
+        specifying a starting position after the first character of the string.
+      </p>
+
+      <section class="code">
+      &lt;string1&gt;.find&lpar;&lt;string2&gt;, &lt;number&gt;&rpar;<br>
+      print "test".find&lpar;"t"&rpar; &num; Result: 0<br>
+      print "test".find&lpar;"t", 1&rpar; &num; Result: 3<br>
+      </section>
     </section>
+
 </body>
 
 </html>
