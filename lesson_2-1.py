@@ -23,7 +23,7 @@ print 1 + 1
 print 52 * 3 + 12 * 9
 print (52 * 3) + (12 * 9)
 print 52 * (3 + 12) * 9
-print 365 * 24 * 60 * 60
+print 365 * 24 * 60 * 60 # seconds in a year
 
 # First Programming Quiz
 print 7 * 7 * 24 * 60
@@ -37,7 +37,7 @@ print 7 * 7 * 24 * 60
 # We can figure out what that means, but Python produces a syntax error
 
 # Backus-Naur Form
-# <non-termina>l -> replacement
+# <non-terminal> -> replacement
 # keep going until everything is a terminal
 
 # Python Grammar for Arithmetic Expressions
