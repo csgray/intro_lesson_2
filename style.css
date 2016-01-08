@@ -39,3 +39,8 @@ body {
   display: block;
   margin: auto;
 }
+
+.code {
+  font: "Lucida Console";
+  font-family: monospace;
+}
