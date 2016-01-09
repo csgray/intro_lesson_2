@@ -380,6 +380,7 @@
       Python is space-sensitive and will generate an error if there is a space
         in front of a command.<br>
       Python comments start with &num;<br>
+      You can break up lines of code with a &bsol;<br>
     </section>
 
     <section class="section">
@@ -597,9 +598,27 @@
       </p>
 
       <section class="code">
-      &lt;string1&gt;.find&lpar;&lt;string2&gt;, &lt;number&gt;&rpar;<br>
-      print "test".find&lpar;"t"&rpar; &num; Result: 0<br>
-      print "test".find&lpar;"t", 1&rpar; &num; Result: 3<br>
+        &lt;string1&gt;.find&lpar;&lt;string2&gt;, &lt;number&gt;&rpar;<br>
+        print "test".find&lpar;"t"&rpar; &num; Result: 0<br>
+        print "test".find&lpar;"t", 1&rpar; &num; Result: 3<br>
+      </section>
+
+      <p>There is also a built-in method for replacing part of a string with
+        a new string.</p>
+      <span class="code">&lt;string&gt;.replace&lpar;&lt;old&gt;,
+        &lt;new&gt;&lsqb;, &lt;max&gt;&rsqb;&rpar;</span>
+
+      <p> The <span class="code">&lsqb;, &lt;max&gt;&rsqb;;</span> part is
+        optional and specifies the maximum number of times to make the
+        replacement. Don't include the square brackets as that is just
+        notation for optional.</p>
+
+      <section class="code">
+        sentence = "A NOUN went on a walk. They can VERB really well."<br>
+        sentence = sentence.replace("NOUN", "duck")<br>
+        sentence = sentence.replace("VERB", "waddle")<br>
+        print sentence &num; Result: A duck went on a walk. They can waddle
+          really well.<br>
       </section>
     </section>
 
