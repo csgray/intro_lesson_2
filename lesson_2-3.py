@@ -48,3 +48,48 @@ print inc(10) # n = 10
 # When should you write a function?
 
 # Why are functions so valuable?
+
+# Define a procedure, square, that takes one number 
+# as its input, and returns the square of that 
+# number (result of multiplying
+# the number by itself).
+
+# Mine
+def square(a):
+    b = a * a
+    return b
+
+# Instructor
+def square(n):
+	return n * n
+
+print square(5)
+# Result: 25
+
+# Define a procedure, sum3, that takes three
+# inputs, and returns the sum of the three
+# input numbers.
+
+def sum3(a,b,c):
+    return a + b + c
+
+print sum3(1,2,3)
+# Result: 6
+
+print sum3(93,53,70)
+# Result: 216
+
+# Define a procedure, abbaize, that takes
+# two strings as its inputs, and returns
+# a string that is the first input,
+# followed by two repetitions of the second input,
+# followed by the first input.
+
+def abbaize(string1,string2):
+    return string1 + string2 + string2 + string1
+
+print abbaize('a','b')
+# Result: abba
+
+print abbaize('dog','cat')
+# Result: dogcatcatdog
