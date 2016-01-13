@@ -176,3 +176,30 @@ print spy
 # len(<list>)
 #	Number of (outer) elements in the input
 
+# Concept Summaries
+# Structured Data: Any data that resides in a fixed field within a record or
+#     files so that it can be easily understood by a computer. Think of a
+#     spreadsheet with the data organized to fit into the cells in categories
+#     that the computer can reference to operate on the data itself.
+#     Ref: http://www.webopedia.com/TERM/S/structured_data.html
+#     Ref: https://en.wikipedia.org/wiki/Data_structure
+#
+# Mutability: The ability for a data object to be modified after it is created.
+#
+# Append vs + vs Extend:
+#     <list>.append(<element>) adds a new object to the end of an existing
+#         list. If you append a list to another list, it will stick the entire
+#         list onto the end of the first list as a new element.
+#         list1 = [1,2,3]
+#         list2 = ['a','b','c']
+#         list1.append(list2)
+#         print list1
+#         [1, 2, 3 ['a', 'b', 'c']]
+#     <list1> + <list2> does not actually change either list. You can print the
+#         lists together and they will look like they are one list, but they
+#         are actually still separate objects and can be referred to as such.
+#     <list>.extend(<list2>) adds the elements of list2 to the end of list1 as
+#         separate elements. It breaks list2 apart before concatenating.
+#         list1.extend(list2)
+#         print list1
+#         [1. 2. 3. 'a', 'b', 'c']
