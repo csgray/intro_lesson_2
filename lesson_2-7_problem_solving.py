@@ -116,3 +116,15 @@ print daysBetweenDates(1900,1,1,1999,12,31) # Goal: 36523
 # Making Progress
 # Don't write lots of code at once
 # Write small bits of code, test them, and know what they do
+
+# Updating Variables with the Result of a Function
+# <variable> = <function>(<variable>)
+# <variable1, variable2> = <function>(<variable1>,<variable2>)
+# You can't just set the variable equal to the new variable or the function.
+# You have to specify the variable is equaling the variables in the function.
+
+# Assertions
+# assert <Expression>, <argument>
+# If the assert is false, the function fails with AssertionError: <argument>
+# You can set asserts to functions!
+# assert dateIsBefore(year1, month1, day1, year2, month2, day2) == True
