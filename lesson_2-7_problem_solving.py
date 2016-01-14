@@ -96,3 +96,17 @@ print daysBetweenDates(1900,1,1,1999,12,31) # Goal: 36523
 # 2. What are the outputs?
 # 3. Solve the problem!
 
+# Understand the Inputs
+# Understand the Outputs
+# Understand the Relationship (by doing examples)
+# Consider systematically how a human would solve the problem
+
+# algorithm / "pseudo code"
+# days = # of days in month1 - day1
+# month1 += 1
+# while month1 < month2:
+#     days += # of days in month1
+#     month1 +=1
+# days += day2
+# while year1 < year2:
+#     days += days in year1
