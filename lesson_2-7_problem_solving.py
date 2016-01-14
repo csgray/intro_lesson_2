@@ -95,6 +95,8 @@ print daysBetweenDates(1900,1,1,1999,12,31) # Goal: 36523
 # 1. What are the inputs?
 # 2. What are the outputs?
 # 3. Solve the problem!
+# 4. Simple mechanical solution
+#    Don't optimize prematurely! Simple and Correct
 
 # Understand the Inputs
 # Understand the Outputs
@@ -110,3 +112,7 @@ print daysBetweenDates(1900,1,1,1999,12,31) # Goal: 36523
 # days += day2
 # while year1 < year2:
 #     days += days in year1
+
+# Making Progress
+# Don't write lots of code at once
+# Write small bits of code, test them, and know what they do
