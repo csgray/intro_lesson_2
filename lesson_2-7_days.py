@@ -35,18 +35,16 @@ def daysInMonth(year, month):
     # Checks if the month is one of the ones with 31 days
     if month in (1, 3, 5, 7, 8, 10, 12):
         return 31
-    # Checks if the month is February
+    # Checks if the month is February and if it has 28 or 29 days that year
     if month == 2:
         if isLeapYear(year) == True:
             return 29
-        else:
-            return 28
-    else:
-        return 30
+        return 28
+    # All other months have 30 days
+    return 30
 
 def nextDay(year, month, day):
-    """Simple version: assume every month has 30 days"""
-    if day < 30:
+    if day < daysInMonth(year, month):
         return year, month, day + 1
     else:
         if month == 12:
