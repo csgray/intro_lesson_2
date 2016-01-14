@@ -7,21 +7,19 @@
 daysOfMonths = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 def isLeapYear(year):
-    if year % 4 != 0:
     # Years that are not divisible by 4 can't be leap years
+    if year % 4 != 0:
         return False
-    elif year % 100 != 0:
     # Years that are divisible by 4 but not 100 are leap years
+    elif year % 100 != 0:
         return True
-    elif year % 400 != 0:
     # Years that are divisible by 100 are not leap years 
     # unless they are divisible by 400
+    elif year % 400 != 0:
         return False
-    else:
     # Then they are a leap year
+    else:
         return True
-
-#print isLeapYear(2000)
 
 def daysBetweenDates(y1, m1, d1, y2, m2, d2):
     days = 0
@@ -67,12 +65,34 @@ def daysBetweenDates(y1, m1, d1, y2, m2, d2):
         # Changes February to 29 days if it is a leap year
         daysOfMonths[1] == 29
         # Subtracts start date from days of start month then adds to days
-        days += daysOfMonths[m1] - d1
+        days += daysOfMonths[m1] - d1 
 
-    # Adds days from partial end month
+    # Adds days from partial end month not including end day
     days += d2
 
     return days
 
-print daysBetweenDates(1986, 9, 10, 2016, 1, 13)
-# Goal: 10,718
+# My birthdate and includes the 13th as one of the counted days
+print daysBetweenDates(1986,9,10,2016,1,13) # Goal: 10,718
+
+# Tests from the end of the lesson
+print daysBetweenDates(2012,1,1,2012,2,28) # Goal: 58
+print daysBetweenDates(2012,1,1,2012,3,1) # Goal: 60
+print daysBetweenDates(2011,6,30,2012,6,30) # Goal: 366
+print daysBetweenDates(2011,1,1,2012,8,8) # Goal: 585
+print daysBetweenDates(1900,1,1,1999,12,31) # Goal: 36523
+
+# Understanding a Computational Problem
+# Problem is defined
+#    by possible inputs (set)
+#    relationship between inputs and desired outputs
+#
+# Solution
+#   input -> Procedure -> output
+
+# Steps to Answering Problems
+# 0. Don't panic!
+# 1. What are the inputs?
+# 2. What are the outputs?
+# 3. Solve the problem!
+
