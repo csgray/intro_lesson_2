@@ -47,7 +47,7 @@ def main_screen():
         return wisdom_generator()
     else:
         print "That is not a valid input. Try 'easy', 'medium', 'hard', or 'wisdom'."
-        return choice
+        main_screen()
 
 def easy():
     print ""
