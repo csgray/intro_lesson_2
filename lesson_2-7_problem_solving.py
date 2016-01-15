@@ -97,6 +97,7 @@ print daysBetweenDates(1900,1,1,1999,12,31) # Goal: 36523
 # 3. Solve the problem!
 # 4. Simple mechanical solution
 #    Don't optimize prematurely! Simple and Correct
+# 5. Develop solution incremently and test as we go
 
 # Understand the Inputs
 # Understand the Outputs

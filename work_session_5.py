@@ -426,11 +426,22 @@ def play_game(ml_string, parts_of_speech):
 	for word in ml_string:
 		replacement = word_in_pos(word, parts_of_speech)
 		if replacement != None:
-			word = word.replace(replacement, "Corgi")
+			word = word.replace(replacement, "corgi")
 			replaced.append(word)
 		else:
 			replaced.append(word)
 	replaced = " ".join(replaced)
 	return replaced
 
-print play_game(test_string, parts_of_speech)  
+print play_game(test_string, parts_of_speech)
+
+# raw_input
+# user_input = raw_input("Type in a word")
+# Displays a prompt for the user that says "Type in a word"
+# Sets user_input to whatever the user types in
+#
+# So replace the 'corgi' part with
+#        if replacement != None:
+#            user_input = raw_input("Type in a: " + replacement + " ")
+#            word = word.replace(replacement, user_input)
+#            replaced.append(word)
