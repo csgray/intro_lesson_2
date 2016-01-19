@@ -23,27 +23,34 @@ def sample_correct(blank):
 
 #def wrong_answer():
 
+tries = 0
+
 def medium_blank():
     blank = 1
+    tries = 0
     global sample
     print sample
     # Medium questions have four blanks so once blank reaches five it stops
     while blank < 5: 
-        tries = 0
         answer = raw_input("What is the answer to blank #" + str(blank) + "?")
         if answer == sample_correct(blank):
-                global sample
-                sample = sample.replace("___" + str(blank) + "___", answer)
-                blank += 1
-                tries = 0
-                print sample
+            global sample
+            sample = sample.replace("___" + str(blank) + "___", answer)
+            blank += 1
+            tries = 0
+            print "Correct!"
+            print sample
         else:
-                while tries < 3:
-                    tries += 1
-                    print "That's incorrect. You have " + str(3 - tries) + " tries remaining."
-                else:
-                    print "Better luck next time!"
+            print "That's incorrect. You have " + str(2 - tries) + " tries remaining."
+            while tries < 2:
+                tries += 1
+                print sample
+                break
+            else:
+                print "Better luck next time!"
+                return
     print "Congratulations! You filled in all the blanks!"
+    return
 
 
 from random import randint
