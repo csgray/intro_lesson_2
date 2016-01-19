@@ -19,11 +19,15 @@ def sample_correct(blank):
     if blank == 4:
         return "list"
 
-#def correct_answer():
+def correct_answer(blank, tries, answer, sample):
+    sample = sample.replace("___" + str(blank) + "___", answer)
+    blank += 1
+    tries = 0
+    print "Correct!"
+    print sample
+    return blank, tries, sample
 
 #def wrong_answer():
-
-tries = 0
 
 def medium_blank():
     blank = 1
@@ -34,12 +38,7 @@ def medium_blank():
     while blank < 5: 
         answer = raw_input("What is the answer to blank #" + str(blank) + "?")
         if answer == sample_correct(blank):
-            global sample
-            sample = sample.replace("___" + str(blank) + "___", answer)
-            blank += 1
-            tries = 0
-            print "Correct!"
-            print sample
+            blank, tries, sample = correct_answer(blank, tries, answer, sample)
         else:
             print "That's incorrect. You have " + str(2 - tries) + " tries remaining."
             while tries < 2:
@@ -72,16 +71,13 @@ def main_screen():
         main_screen()
 
 def easy():
-    print ""
     print "Easy Paragraph"
 
 def medium():
-    print ""
     print "Alright! Here is a medium paragraph:"
     medium_blank()
 
 def hard():
-    print ""
     print "Hard Paragraph"
 
 # Randomly selects and prints a quote from the Adeptus Mechanicus
@@ -129,10 +125,10 @@ Or maybe you want some words of _wisdom_?'''
 main_screen()
 
 #def play_game(paragraph):
-#	print paragraph
-#	fill_blanks(paragraph, blank)
+#   print paragraph
+#   fill_blanks(paragraph, blank)
 
 # Prompts the user for input then fills in the blank
 #def fill_blanks(paragraph, blank):
-#	paragraph = paragraph.replace('___' + str(blank) + '___', input1)
-#	return paragraph
+#   paragraph = paragraph.replace('___' + str(blank) + '___', input1)
+#   return paragraph
