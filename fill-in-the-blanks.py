@@ -27,7 +27,15 @@ def correct_answer(blank, tries, answer, sample):
     print sample
     return blank, tries, sample
 
-#def wrong_answer():
+def wrong_answer(tries, sample):
+    print "That's incorrect. You have " + str(2 - tries) + " tries remaining."
+    while tries < 2:
+        tries += 1
+        print sample
+        return tries
+    else:
+        print "Better luck next time!"
+        raise SystemExit
 
 def medium_blank():
     blank = 1
@@ -40,17 +48,8 @@ def medium_blank():
         if answer == sample_correct(blank):
             blank, tries, sample = correct_answer(blank, tries, answer, sample)
         else:
-            print "That's incorrect. You have " + str(2 - tries) + " tries remaining."
-            while tries < 2:
-                tries += 1
-                print sample
-                break
-            else:
-                print "Better luck next time!"
-                return
+            tries = wrong_answer(tries, sample)
     print "Congratulations! You filled in all the blanks!"
-    return
-
 
 from random import randint
 
