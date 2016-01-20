@@ -1,25 +1,5 @@
 # IPND Stage 2 Final Project
 
-# Paragraph provided by the sample code for testing
-sample = """
-A ___1___ is created with the def keyword. You specify the inputs a ___1___
-takes by adding ___2___ separated by commas between the parentheses. ___1___s
-by default return ___3___ if you don't specify the value to return. ___2___ can
-be standard data types such as string, number, dictionary, tuple, and ___4___
-or can be more complicated such as objects and lambda functions.
-"""
-
-def sample_correct(blank):
-    """Answer key for the 'sample' paragraph."""
-    if blank == 1:
-        return "function"
-    if blank == 2:
-        return "inputs"
-    if blank == 3:
-        return "None"
-    if blank == 4:
-        return "list"
-
 easy1 = """
 It's a dangerous business, Frodo, going out your ___1___. You step onto the
 ___2___, and if you don't keep your ___3___, there's no knowing where you might
@@ -158,10 +138,10 @@ def hard2_correct(blank):
         return "Shadows"
 
 hard3 = """
-It's like in the great ___1___, Mr. Frodo. The ones that really mattered. Full 
-of ___2___ and ___3___ they were. And sometimes you didn't want to know the 
-___4___... because how could the ___4___ be happy? How could the world go back 
-to the way it was when so much bad had happened? But in the end, it’s only a 
+It's like in the great ___1___, Mr. Frodo. The ones that really mattered. Full
+of ___2___ and ___3___ they were. And sometimes you didn't want to know the
+___4___... because how could the ___4___ be happy? How could the world go back
+to the way it was when so much bad had happened? But in the end, it's only a
 ___5___ing thing... this shadow. Even ___2___ must ___5___.
 """
 
@@ -180,25 +160,25 @@ def hard3_correct(blank):
 
 from random import randint
 
-def correct_answer(blank, tries, answer, sample):
+def correct_answer(blank, tries, answer, question):
     """Replaces the blank with the correct answer, advances to the next blank,
     and resets the number of tries the user has for the next question.
     """
-    sample = sample.replace("___" + str(blank) + "___", answer)
+    question = question.replace("___" + str(blank) + "___", answer)
     blank += 1
     tries = 0
     print "Correct!"
-    print sample
-    return blank, tries, sample
+    print question
+    return blank, tries, question
 
-def wrong_answer(tries, sample):
+def wrong_answer(tries, question):
     """Increases tries by 1 each time the user gets it wrong until they have
     tried three times. Then it ends the program.
     """
     print "That's incorrect. You have " + str(2 - tries) + " tries remaining."
     while tries < 2:
         tries += 1
-        print sample
+        print question
         return tries
     else:
         print "Better luck next time!"
@@ -211,15 +191,15 @@ def easy_blank():
     """
     blank = 1
     tries = 0
-    global sample
-    print sample
+    question = easy1
+    print question
     # Easy questions have three blanks so once blank reaches four it stops
     while blank < 4: 
         answer = raw_input("What is the answer to blank #" + str(blank) + "?")
-        if answer == sample_correct(blank):
-            blank, tries, sample = correct_answer(blank, tries, answer, sample)
+        if answer == easy1_correct(blank):
+            blank, tries, question = correct_answer(blank, tries, answer, question)
         else:
-            tries = wrong_answer(tries, sample)
+            tries = wrong_answer(tries, question)
     print "Congratulations! You filled in all the blanks!"
     raise SystemExit
 
@@ -230,15 +210,15 @@ def medium_blank():
     """
     blank = 1
     tries = 0
-    global sample
-    print sample
+    question = medium1
+    print question
     # Medium questions have four blanks so once blank reaches five it stops
     while blank < 5: 
         answer = raw_input("What is the answer to blank #" + str(blank) + "?")
-        if answer == sample_correct(blank):
-            blank, tries, sample = correct_answer(blank, tries, answer, sample)
+        if answer == medium1_correct(blank):
+            blank, tries, question = correct_answer(blank, tries, answer, question)
         else:
-            tries = wrong_answer(tries, sample)
+            tries = wrong_answer(tries, question)
     print "Congratulations! You filled in all the blanks!"
     raise SystemExit
 
@@ -249,15 +229,15 @@ def hard_blank():
     """
     blank = 1
     tries = 0
-    global sample
-    print sample
+    question = hard1
+    print question
     # Hard questions have five blanks so once blank reaches six it stops
     while blank < 6: 
         answer = raw_input("What is the answer to blank #" + str(blank) + "?")
-        if answer == sample_correct(blank):
-            blank, tries, sample = correct_answer(blank, tries, answer, sample)
+        if answer == hard1_correct(blank):
+            blank, tries, question = correct_answer(blank, tries, answer, question)
         else:
-            tries = wrong_answer(tries, sample)
+            tries = wrong_answer(tries, question)
     print "Congratulations! You filled in all the blanks!"
     raise SystemExit
 
@@ -283,7 +263,7 @@ def main_screen():
         main_screen()
 
 def easy():
-    print "Alright! Here is a medium paragraph:"
+    print "Alright! Here is a easy paragraph:"
     easy_blank()
 
 def medium():
@@ -291,7 +271,7 @@ def medium():
     medium_blank()
 
 def hard():
-    print "Alright! Here is a medium paragraph:"
+    print "Alright! Here is a hard paragraph:"
     hard_blank()
 
 def wisdom_generator():
