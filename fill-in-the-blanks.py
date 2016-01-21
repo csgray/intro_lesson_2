@@ -187,6 +187,7 @@ def main_screen():
     # Prints a random quote from the wisdom collection
     if choice == "wisdom":
         print wisdom[randint(0,3)]
+        raise SystemExit
     # Terminates the program if the user types "quit" or "exit"
     if choice == "quit" or choice == "exit":
         raise SystemExit
